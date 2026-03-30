@@ -1,0 +1,6 @@
+(library
+ (name crc)
+ (public_name janestreet_crc)
+ (libraries core core_kernel.iobuf)
+ (preprocess
+  (pps ppx_jane)))
