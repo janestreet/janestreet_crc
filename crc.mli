@@ -8,7 +8,7 @@ open! Core
 
 val crc32 : string -> Int63.t
 val bigstring_crc32 : Bigstring.t -> pos:int -> len:int -> Int63.t
-val iobuf_crc32 : ([> read ], _, Iobuf.global) Iobuf.t -> Int63.t
+val iobuf_crc32 : local_ ([> read ], _, Iobuf.global) Iobuf.t -> Int63.t
 
 (** String version of the CRC, encoded in hex. *)
 val crc32hex : string -> string
@@ -22,7 +22,7 @@ module With_custom_polynomial : sig
   val crc32 : t -> string -> Int63.t
 
   val bigstring_crc32 : t -> Bigstring.t -> pos:int -> len:int -> Int63.t
-  val iobuf_crc32 : t -> ([> read ], _, Iobuf.global) Iobuf.t -> Int63.t
+  val iobuf_crc32 : t -> local_ ([> read ], _, Iobuf.global) Iobuf.t -> Int63.t
 
   (** String version of the CRC, encoded in hex. *)
   val crc32hex : t -> string -> string
